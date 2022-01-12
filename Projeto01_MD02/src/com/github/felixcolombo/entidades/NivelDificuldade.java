@@ -32,7 +32,17 @@ public class NivelDificuldade {
 				
 		}while(erro);
 		
-		nivelEscolhido= nivel;	
+		switch(nivel) {
+		case "1":
+			nivelEscolhido = "Nível Fácil";
+			break;
+		case "2":
+			nivelEscolhido = "Nível Normal";
+			break;
+		case "3":
+			nivelEscolhido = "Nível Difícil";
+			break;
+		}
 		
 	}
 

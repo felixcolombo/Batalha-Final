@@ -29,6 +29,8 @@ public class AppBatalhaFinal {
 		
 		nivelEscolhido= nivelDificuldade.getNivelDificuldade();
 		
+		System.out.println(nivelEscolhido);
+		
 		
 	}
 

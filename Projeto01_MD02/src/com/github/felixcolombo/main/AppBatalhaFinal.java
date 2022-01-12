@@ -1,6 +1,5 @@
 package com.github.felixcolombo.main;
 
-import java.util.Scanner;
 
 import com.github.felixcolombo.entidades.NivelDificuldade;
 
@@ -14,7 +13,7 @@ public class AppBatalhaFinal {
 	    }
 	}
 	
-	private static Scanner keyboard = new Scanner(System.in);
+	private static String nivelEscolhido;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,36 +25,10 @@ public class AppBatalhaFinal {
 		
 		System.out.println("-Vamos iniciar escolhendo o nível de dificuldade: ");
 		pause(700);
-		escolherNivel(nivelDificuldade);
+		NivelDificuldade.escolherNivel();
 		
-	}
-
-	public static double escolherNivel(NivelDificuldade nivelDificuldade) {
+		nivelEscolhido= nivelDificuldade.getNivelDificuldade();
 		
-		boolean erro;
-		String nivel;
-		
-		do {
-			erro=false;
-			
-			String menu = "";
-			menu += "    1 - Fácil \n";
-			menu += "    2 - Normal \n";
-			menu += "    3 - Difícil \n";
-			
-			System.out.println(menu);
-			nivel= keyboard.next();
-			
-			if(!nivel.equals("1")&&!nivel.equals("2")&&!nivel.equals("3")) {
-				System.out.println("Oops!! Escolha inválida!");
-				System.out.println("Escolha entre as opções abaixo:\n");
-				erro=true;
-			}
-				
-		}while(erro);
-		
-		double fatorNivel = nivelDificuldade.escolherNivel(nivel);
-		return fatorNivel;
 		
 	}
 

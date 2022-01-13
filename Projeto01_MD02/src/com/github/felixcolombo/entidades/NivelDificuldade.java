@@ -6,13 +6,12 @@ public class NivelDificuldade {
 	
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String nivelEscolhido;
+	private static String nivel;
 	
 	public static void escolherNivel() {
 		
 		boolean erro;
-		String nivel;
-		
-		
+			
 		do {
 			erro=false;
 			

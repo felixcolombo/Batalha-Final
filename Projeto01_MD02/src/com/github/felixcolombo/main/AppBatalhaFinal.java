@@ -2,6 +2,7 @@ package com.github.felixcolombo.main;
 
 import com.github.felixcolombo.entidades.NivelDificuldade;
 import com.github.felixcolombo.entidades.NomeSexo;
+import com.github.felixcolombo.entidades.Personagens;
 
 public class AppBatalhaFinal {
 	
@@ -45,7 +46,7 @@ public class AppBatalhaFinal {
 		
 		System.out.println("-Escolha seu personagem: \n");
 		pause(700);
-		NivelDificuldade.escolherNivel();
+		Personagens.escolherPersonagem();
 		
 		
 	}

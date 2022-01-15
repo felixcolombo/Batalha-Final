@@ -14,6 +14,14 @@ public class EscolhaAndarSaltarCorrer {
 	private static String escolha;
 	private static double poderAtualPersonagem;
 	
+	public static void pause(int ms) {
+	    try {
+	        Thread.sleep(ms);
+	    } catch (InterruptedException e) {
+	        System.err.format("IOException: %s%n", e);
+	    }
+	}
+	
 	public static void escolherAndarSaltarCorrer() {
 		
 		boolean erro;
@@ -40,6 +48,7 @@ public class EscolhaAndarSaltarCorrer {
 		switch(escolha) {
 		case "1":
 			MensagemAndando.exibirMensagemAndando();
+			pause(500);
 			EscolheuAndando.tomarDanoEcolheuAndando();
 			poderAtualPersonagem = EscolheuAndando.getPoderAtualizadoPersonagem();
 			MensagemDanoPorAndar.exibirMensagemDanoPorAndar();

@@ -3,6 +3,8 @@ package com.github.felixcolombo.entidades.roteiro;
 import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemInicial;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemMotivacao;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPortaDireita;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemSalaQuadrada;
 
 public class RoteiroJogo {
 	
@@ -35,6 +37,11 @@ public class RoteiroJogo {
 			System.out.println("\nFim de Jogo!!");
 		}else {
 			EscolhaAndarSaltarCorrer.escolherAndarSaltarCorrer();
+			pause(500);
+			MensagemSalaQuadrada.exibirMensagemSalaQuadrada();
+			MensagemPortaDireita.exibirMensagemPortaDireita();
+			
+			
 			
 		}
 	}

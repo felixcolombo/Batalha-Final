@@ -9,7 +9,7 @@ public class MensagemContinuar {
 				+ "uma fonte de luz, que você imagina ser a chama de uma tocha, vindo de dentro de uma porta\r\n"
 				+ "aberta.\n\n"
 				+ "Você se pergunta se dentro dessa sala pode haver inimigos, ou alguma armadilha, e pondera\r\n"
-				+ "sobre como passar pela porta.\n");
+				+ "sobre como passar pela porta.");
 	}
 
 }

@@ -10,7 +10,7 @@ public class MensagemInicial {
 				+ "todos os inimigos já derrotados para alcançar o covil do líder maligno. Olha para seu\r\n"
 				+ "equipamento de combate, já danificado e desgastado depois de tantas lutas. Você está a um\r\n"
 				+ "passo de encerrar para sempre esse mal.\r\n\n"
-				+ "Buscando uma injeção de ânimo, você se força a lembrar o que te trouxe até aqui.\r\n\n");
+				+ "Buscando uma injeção de ânimo, você se força a lembrar o que te trouxe até aqui.\r\n");
 	}
 
 }

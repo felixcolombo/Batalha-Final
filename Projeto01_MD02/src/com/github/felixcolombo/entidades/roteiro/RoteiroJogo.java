@@ -1,5 +1,6 @@
 package com.github.felixcolombo.entidades.roteiro;
 
+import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemInicial;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemMotivacao;
 
@@ -34,7 +35,7 @@ public class RoteiroJogo {
 			System.out.println("\nFim de Jogo!!");
 		}else {
 			EscolhaAndarSaltarCorrer.escolherAndarSaltarCorrer();
-						
+			
 		}
 	}
 

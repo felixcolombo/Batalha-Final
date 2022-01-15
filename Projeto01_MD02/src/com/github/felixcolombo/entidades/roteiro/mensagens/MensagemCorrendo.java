@@ -9,7 +9,7 @@ public class MensagemCorrendo {
 				+ "olhando ao redor à procura de inimigos. Não tem ninguém, mas você ouve sons de flechas\r\n"
 				+ "batendo na pedra atrás de você, e quando se vira, vê várias flechas no chão. Espiando pela porta,\r\n"
 				+ "você entende que pisou em uma armadilha que soltou flechas de uma escotilha aberta no teto,\r\n"
-				+ "mas por sorte você entrou correndo e conseguiu escapar desse ataque surpresa.");
+				+ "mas por sorte você entrou correndo e conseguiu escapar desse ataque surpresa.\n");
 	}
 
 }

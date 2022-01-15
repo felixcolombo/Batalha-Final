@@ -8,7 +8,7 @@ public class Mago extends Personagens {
 	private final double ATAQUE_PERSONAGEM = 50;
 	private final double DEFESA_PERSONAGEM = 30;
 	
-	public Mago(String personagemSelecionado) {
+	public Mago() {
 		
 		this.setPoderPersonagem(PODER_PERSONAGEM);
 		this.setAtaquePersonagem(ATAQUE_PERSONAGEM);

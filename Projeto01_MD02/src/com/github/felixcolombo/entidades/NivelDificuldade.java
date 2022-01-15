@@ -18,7 +18,7 @@ public class NivelDificuldade {
 			String menu = "";
 			menu += "    1 - Fácil \n";
 			menu += "    2 - Normal \n";
-			menu += "    3 - Difícil \n";
+			menu += "    3 - Difícil";
 			
 			System.out.println(menu);
 			nivel= keyboard.next();
@@ -45,7 +45,7 @@ public class NivelDificuldade {
 		
 	}
 
-	public String getNivelDificuldade() {
+	public static String getNivelDificuldade() {
 		// TODO Auto-generated method stub
 		return nivelEscolhido;
 	}

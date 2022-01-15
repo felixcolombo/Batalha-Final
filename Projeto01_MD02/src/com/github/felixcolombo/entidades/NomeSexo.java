@@ -8,6 +8,8 @@ public class NomeSexo {
 	private static String nome;
 	private static String sexo;
 	private static String sexoSelecionado;
+	private static String artigoIndefinidoSexo;
+	private static String complementoSexo;
 	
 	public static void nomeSexo() {
 		
@@ -21,14 +23,14 @@ public class NomeSexo {
 			
 			String menu = "\n";
 			menu += "    1 - Feminino \n";
-			menu += "    2 - Masculino \n";
+			menu += "    2 - Masculino ";
 						
 			System.out.println(menu);
 			sexo= keyboard.next();
 			
 			if(!sexo.equals("1")&&!sexo.equals("2")) {
 				System.out.println("Oops!! Escolha inválida!");
-				System.out.println("Escolha entre as opções abaixo:\n");
+				System.out.println("Escolha entre as opções abaixo:");
 				erro=true;
 			}
 				
@@ -37,9 +39,11 @@ public class NomeSexo {
 		switch(sexo) {
 		case "1":
 			sexoSelecionado = "Heróina";
+			artigoIndefinidoSexo = "uma";
 			break;
 		case "2":
 			sexoSelecionado = "Herói";
+			artigoIndefinidoSexo = "um";
 			break;
 		}
 		
@@ -60,6 +64,23 @@ public class NomeSexo {
 	public static void setNome(String nome) {
 		NomeSexo.nome = nome;
 	}
+
+	public static String getArtigoIndefinidoSexo() {
+		return artigoIndefinidoSexo;
+	}
+
+	public static void setArtigoIndefinidoSexo(String artigoIndefinidoSexo) {
+		NomeSexo.artigoIndefinidoSexo = artigoIndefinidoSexo;
+	}
+
+	public static String getComplementoSexo() {
+		return complementoSexo;
+	}
+
+	public static void setComplementoSexo(String complementoSexo) {
+		NomeSexo.complementoSexo = complementoSexo;
+	}
+	
 	
 }
 

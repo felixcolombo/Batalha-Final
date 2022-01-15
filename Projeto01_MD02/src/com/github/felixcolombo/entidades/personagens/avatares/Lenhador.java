@@ -1,4 +1,4 @@
-package com.github.felixcolombo.entidades.avatares;
+package com.github.felixcolombo.entidades.personagens.avatares;
 
 import com.github.felixcolombo.entidades.Personagens;
 

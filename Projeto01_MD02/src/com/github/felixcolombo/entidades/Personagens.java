@@ -2,8 +2,8 @@ package com.github.felixcolombo.entidades;
 
 import java.util.Scanner;
 
-import com.github.felixcolombo.entidades.avatares.Lenhador;
-import com.github.felixcolombo.entidades.avatares.Mago;
+import com.github.felixcolombo.entidades.personagens.avatares.Lenhador;
+import com.github.felixcolombo.entidades.personagens.avatares.Mago;
 
 public class Personagens {
 	

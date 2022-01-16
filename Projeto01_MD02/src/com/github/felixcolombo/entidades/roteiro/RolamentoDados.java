@@ -5,14 +5,14 @@ import java.util.Random;
 public class RolamentoDados {
 	
 	static Random valorDados = new Random();
-	private static int valorDadosSorteado;
+	private static double valorDadosSorteado;
 	
 	public static void rolarDados(int parametroDados) {
 
 		valorDadosSorteado = valorDados.nextInt(parametroDados)+1;
 	}
 
-	public static int getValorDadosSorteado() {
+	public static double getValorDadosSorteado() {
 		return valorDadosSorteado;
 	}
 

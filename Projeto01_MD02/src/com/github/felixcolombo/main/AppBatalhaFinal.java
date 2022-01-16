@@ -16,16 +16,9 @@ public class AppBatalhaFinal {
 	    }
 	}
 	
-	private static String nivelEscolhido;
 	private static String sexoSelecionado;
 	private static String nome;
 	private static String artigoIndefinidoSexo;
-	private static String complementoSexo;
-	
-	private static String personagemSelecionado;
-	private static double poderPersonagem;
-	private double ataquePersonagem;
-	private double defesaPersonagem;
 	
 	private static String armaSelecionada;
 	private static String artigoIndefinidoArma;
@@ -39,7 +32,6 @@ public class AppBatalhaFinal {
 		System.out.println("-Vamos iniciar escolhendo o nível de dificuldade: \n");
 		pause(500);
 		NivelDificuldade.escolherNivel();
-		nivelEscolhido = NivelDificuldade.getNivelDificuldade();
 		
 		System.out.println("\n-Qual seu nome e sexo?\n");
 		pause(500);
@@ -47,13 +39,11 @@ public class AppBatalhaFinal {
 		sexoSelecionado = NomeSexo.getSexo();
 		nome = NomeSexo.getNome();
 		artigoIndefinidoSexo = NomeSexo.getArtigoIndefinidoSexo();
-		complementoSexo = NomeSexo.getComplementoSexo();
 		
 		System.out.println("\n-"+nome+", escolha seu personagem:");
 		pause(500);
 		Personagens.escolherPersonagem();
-		personagemSelecionado = Personagens.getPersonagemSelecionado();
-		
+				
 		System.out.println("\n-"+nome+", escolha sua arma:");
 		pause(500);
 		Armas.escolherArma();

@@ -11,7 +11,7 @@ public class Armeiro extends Inimigos {
 	
 	public Armeiro() {
 		
-		this.setNomeInimigo(NOME_INIMIGO);
+		Inimigos.setNomeInimigo(NOME_INIMIGO);
 		this.setPoderInimigo(PODER_INIMIGO);
 		this.setAtaqueInimigo(ATAQUE_INIMIGO);
 		this.setDefesaInimigo(DEFESA_INIMIGO);

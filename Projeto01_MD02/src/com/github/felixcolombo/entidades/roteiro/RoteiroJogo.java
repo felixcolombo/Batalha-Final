@@ -3,9 +3,11 @@ package com.github.felixcolombo.entidades.roteiro;
 import com.github.felixcolombo.entidades.Inimigos;
 import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.combates.Combates;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemAposDerrotarArmeiro;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemInicial;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemMotivacao;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPortaDireita;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPortaEsquerda;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemSalaQuadrada;
 
 public class RoteiroJogo {
@@ -56,7 +58,28 @@ public class RoteiroJogo {
 			if(!vencedorCombate) {
 				System.out.println("\nFim de Jogo!!");
 			}else {
+				pause(500);
+				MensagemAposDerrotarArmeiro.exibirMensagemAposDerrotarArmeiro();
+				pause(500);
 				
+				EscolhaPegarArmadurasArmeiro.escolhaPegarArmadurasArmeiro();
+				pause(500);
+				
+				MensagemPortaEsquerda.exibirMensagemPortaEsquerda();
+				pause(500);
+				
+				ordemCombate = "2";
+				
+				Inimigos.inimigos();
+				Combates.combate(); 
+				
+				vencedorCombate = Combates.isVencedorCombate();
+				if(!vencedorCombate) {
+					System.out.println("\nFim de Jogo!!");
+				}else {
+					System.out.println("\nContinuar Jogo!!");
+					System.out.println(ordemCombate);
+				}
 			}
 			
 		}

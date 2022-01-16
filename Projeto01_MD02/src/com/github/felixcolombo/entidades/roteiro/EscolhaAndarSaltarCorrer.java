@@ -12,7 +12,7 @@ public class EscolhaAndarSaltarCorrer {
 	
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String escolha;
-	private static double poderAtualPersonagem;
+	private static double poderAposAndarSaltarCorrer;
 	
 	public static void pause(int ms) {
 	    try {
@@ -49,27 +49,20 @@ public class EscolhaAndarSaltarCorrer {
 		case "1":
 			MensagemAndando.exibirMensagemAndando();
 			pause(500);
+			
 			EscolheuAndando.tomarDanoEcolheuAndando();
-			poderAtualPersonagem = EscolheuAndando.getPoderAtualizadoPersonagem();
+			
 			MensagemDanoPorAndar.exibirMensagemDanoPorAndar();
 			break;
+		
 		case "2":
 			MensagemSaltando.exibirMensagemSaltando();
-			poderAtualPersonagem = Personagens.getPoderPersonagem();
 			break;	
+		
 		case "3":
 			MensagemCorrendo.exibirMensagemCorrendo();
-			poderAtualPersonagem = Personagens.getPoderPersonagem();
 			break;
 		}
-	}
-
-	public static double getPoderAtualPersonagem() {
-		return poderAtualPersonagem;
-	}
-
-	public static void setPoderAtualPersonagem(double poderAtualPersonagem) {
-		EscolhaAndarSaltarCorrer.poderAtualPersonagem = poderAtualPersonagem;
 	}
 
 }

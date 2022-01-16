@@ -4,9 +4,9 @@ import com.github.felixcolombo.entidades.Personagens;
 
 public class Mago extends Personagens {
 	
-	private final double PODER_PERSONAGEM = 50;
-	private final double ATAQUE_PERSONAGEM = 50;
-	private final double DEFESA_PERSONAGEM = 30;
+	private final double PODER_PERSONAGEM = 100;
+	private final double ATAQUE_PERSONAGEM = 5;
+	private final double DEFESA_PERSONAGEM = 45;
 	
 	public Mago() {
 		

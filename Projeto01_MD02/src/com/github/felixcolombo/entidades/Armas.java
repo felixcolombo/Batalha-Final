@@ -14,6 +14,7 @@ public class Armas {
 	private static double poderArma;
 	private static double fatorArma;
 	private static String artigoIndefinidoArma;
+	private static String complementoArma;
 	
 	public static void escolherArma() {
 		
@@ -93,12 +94,12 @@ public class Armas {
 		Armas.poderArma = poderArma;
 	}
 
-	public double getFatorArma() {
+	public static double getFatorArma() {
 		return fatorArma;
 	}
 
-	public void setFatorArma(double fatorArma) {
-		this.fatorArma = fatorArma;
+	public static void setFatorArma(double fatorArma) {
+		Armas.fatorArma = fatorArma;
 	}
 
 	public static String getArtigoIndefinidoArma() {
@@ -107,6 +108,14 @@ public class Armas {
 
 	public static void setArtigoIndefinidoArma(String artigoIndefinidoArma) {
 		Armas.artigoIndefinidoArma = artigoIndefinidoArma;
+	}
+
+	public static String getComplementoArma() {
+		return complementoArma;
+	}
+
+	public static void setComplementoArma(String complementoArma) {
+		Armas.complementoArma = complementoArma;
 	}
 		
 }

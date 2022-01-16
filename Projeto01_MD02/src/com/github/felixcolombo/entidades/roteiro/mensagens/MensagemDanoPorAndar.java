@@ -9,8 +9,7 @@ public class MensagemDanoPorAndar {
 	public static void exibirMensagemDanoPorAndar() {
 		
 		System.out.println("As flechas que o acertaram causaram um dano de "
-		+RolamentoDados.getValorDadosSorteado()+".\n"
-				+ "Inicialmente você tinha "+Personagens.getPoderPersonagem()+" de poder.\n"
-						+ "Agora está com "+EscolheuAndando.getPoderAtualizadoPersonagem());
+				+RolamentoDados.getValorDadosSorteado()+".\n"
+				+ "Agora está com "+Personagens.getPoderPersonagem());
 	}
 }

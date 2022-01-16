@@ -18,14 +18,7 @@ public class EscolheuAndando {
 		
 		poderAtualizadoPersonagem = poderAtualPersonagem - valorDadosSorteado;
 		
-	}
-
-	public static double getPoderAtualizadoPersonagem() {
-		return poderAtualizadoPersonagem;
-	}
-
-	public static void setPoderAtualizadoPersonagem(double poderAtualizadoPersonagem) {
-		EscolheuAndando.poderAtualizadoPersonagem = poderAtualizadoPersonagem;
+		Personagens.poderPersonagem = poderAtualizadoPersonagem;
 	}
 
 }

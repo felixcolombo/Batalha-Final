@@ -40,10 +40,12 @@ public class NomeSexo {
 		case "1":
 			sexoSelecionado = "Heróina";
 			artigoIndefinidoSexo = "uma";
+			complementoSexo = "sua próxima";
 			break;
 		case "2":
 			sexoSelecionado = "Herói";
 			artigoIndefinidoSexo = "um";
+			complementoSexo = "seu próximo";
 			break;
 		}
 		

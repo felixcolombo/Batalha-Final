@@ -1,6 +1,7 @@
 package com.github.felixcolombo.entidades.roteiro;
 
 import com.github.felixcolombo.entidades.Inimigos;
+import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.combates.Combates;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemInicial;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemMotivacao;
@@ -10,6 +11,7 @@ import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemSalaQuadrada;
 public class RoteiroJogo {
 	
 	private static Boolean continuarDesistir;
+	private static Boolean vencedorCombate;
 	private static String ordemCombate;
 	
 	public static void pause(int ms) {
@@ -35,18 +37,28 @@ public class RoteiroJogo {
 		
 		EscolhaDesistirContinuar.escolherDesistirContinuar();
 		continuarDesistir = EscolhaDesistirContinuar.isContinuar();
+		
 		if(!continuarDesistir) {
 			System.out.println("\nFim de Jogo!!");
 		}else {
 			EscolhaAndarSaltarCorrer.escolherAndarSaltarCorrer();
 			pause(500);
+			
 			MensagemSalaQuadrada.exibirMensagemSalaQuadrada();
 			MensagemPortaDireita.exibirMensagemPortaDireita();
 			
 			ordemCombate = "1";
+
 			Inimigos.inimigos();
 			Combates.combate(); 
+			
+			vencedorCombate = Combates.isVencedorCombate();
+			if(!vencedorCombate) {
+				System.out.println("\nFim de Jogo!!");
+			}else {
 				
+			}
+			
 		}
 	}
 

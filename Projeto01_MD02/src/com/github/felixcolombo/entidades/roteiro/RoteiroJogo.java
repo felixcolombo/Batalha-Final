@@ -46,8 +46,7 @@ public class RoteiroJogo {
 			ordemCombate = "1";
 			Inimigos.inimigos();
 			Combates.combate(); 
-			
-			
+				
 		}
 	}
 

@@ -64,12 +64,8 @@ public class Combates {
 		RolamentoDados.rolarDados(parametroDados);
 		valorDadosSorteado = RolamentoDados.getValorDadosSorteado();
 		
-		System.out.println(nomeInimigo);
-		System.out.println(poderInimigo);
-		System.out.println(ataqueInimigo);
-		System.out.println(defesaInimigo);
-		
-		
+		poderInimigo = poderInimigo-valorDadosSorteado-ataquePersonagem;
+				
 	}
 	
 	public static void inimigoAtaca() {

@@ -2,7 +2,6 @@ package com.github.felixcolombo.entidades.roteiro;
 
 import java.util.Scanner;
 
-import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemAndando;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemCorrendo;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemDanoPorAndar;
@@ -12,7 +11,6 @@ public class EscolhaAndarSaltarCorrer {
 	
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String escolha;
-	private static double poderAposAndarSaltarCorrer;
 	
 	public static void pause(int ms) {
 	    try {

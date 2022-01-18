@@ -12,8 +12,8 @@ public class Lider extends Inimigos{
 	public Lider() {
 		
 		Inimigos.setNomeInimigo(NOME_INIMIGO);
-		this.setPoderInimigo(PODER_INIMIGO);
-		this.setAtaqueInimigo(ATAQUE_INIMIGO);
-		this.setDefesaInimigo(DEFESA_INIMIGO);
+		Inimigos.setPoderInimigo(PODER_INIMIGO);
+		Inimigos.setAtaqueInimigo(ATAQUE_INIMIGO);
+		Inimigos.setDefesaInimigo(DEFESA_INIMIGO);
 	}
 }

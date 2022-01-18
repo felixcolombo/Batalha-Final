@@ -3,15 +3,15 @@ package com.github.felixcolombo.entidades.roteiro;
 import java.util.Scanner;
 
 import com.github.felixcolombo.entidades.Personagens;
-import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemNaoPegouArmaduras;
-import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPegouArmaduras;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemBebeuPocao;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemNaoBebeuPocao;
 
-public class EscolhaPegarArmadurasArmeiro {
+public class EscolhaBeberPocao {
 	
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String escolha;
 	
-	public static void escolhaPegarArmadurasArmeiro() {
+	public static void escolhaBeberPocao() {
 		
 		boolean erro;
 		
@@ -19,8 +19,8 @@ public class EscolhaPegarArmadurasArmeiro {
 			erro=false;
 				
 			String menu = "\n";
-			menu += "    1 - Pegar Armaduras \n";
-			menu += "    2 - Não Pegar Armaduras ";
+			menu += "    1 - Beber Poção \n";
+			menu += "    2 - Não Beber Poção ";
 							
 			System.out.println(menu);
 			escolha= keyboard.next();
@@ -35,15 +35,14 @@ public class EscolhaPegarArmadurasArmeiro {
 		
 		switch(escolha) {
 		case "1":
-			MensagemPegouArmaduras.exibirMensagemPegouArmaduras();
+			MensagemBebeuPocao.exibirMensagemBebeuPocao();
 			Personagens.defesaPersonagem = Personagens.defesaPersonagem + 5;
 			break;
 		
 		case "2":
-			MensagemNaoPegouArmaduras.exibirMensagemNaoPegouArmaduras();
+			MensagemNaoBebeuPocao.exibirMensagemNaoBebeuPocao();;
 			break;	
 		}
 	}
 }
-
 

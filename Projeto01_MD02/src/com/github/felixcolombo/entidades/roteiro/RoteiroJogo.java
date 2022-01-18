@@ -1,20 +1,23 @@
 package com.github.felixcolombo.entidades.roteiro;
 
 import com.github.felixcolombo.entidades.Inimigos;
-import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.combates.Combates;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemAposDerrotarAlquimista;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemAposDerrotarArmeiro;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemInicial;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemMotivacao;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPortaDireita;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPortaEsquerda;
+import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPortaLider;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemSalaQuadrada;
 
 public class RoteiroJogo {
 	
 	private static Boolean continuarDesistir;
 	private static Boolean vencedorCombate;
-	private static String ordemCombate;
+	private static int ordemCombate;
+	
+	public static String nomeInimigo = Inimigos.getNomeInimigo();
 	
 	public static void pause(int ms) {
 	    try {
@@ -43,21 +46,22 @@ public class RoteiroJogo {
 		if(!continuarDesistir) {
 			System.out.println("\nFim de Jogo!!");
 		}else {
+			
 			EscolhaAndarSaltarCorrer.escolherAndarSaltarCorrer();
 			pause(500);
 			
 			MensagemSalaQuadrada.exibirMensagemSalaQuadrada();
 			MensagemPortaDireita.exibirMensagemPortaDireita();
 			
-			ordemCombate = "1";
-
-			Inimigos.inimigos();
+			ordemCombate=1;
+			Inimigos.inimigos(ordemCombate);
 			Combates.combate(); 
 			
 			vencedorCombate = Combates.isVencedorCombate();
 			if(!vencedorCombate) {
 				System.out.println("\nFim de Jogo!!");
 			}else {
+				
 				pause(500);
 				MensagemAposDerrotarArmeiro.exibirMensagemAposDerrotarArmeiro();
 				pause(500);
@@ -68,29 +72,50 @@ public class RoteiroJogo {
 				MensagemPortaEsquerda.exibirMensagemPortaEsquerda();
 				pause(500);
 				
-				ordemCombate = "2";
-				
-				Inimigos.inimigos();
-				Combates.combate(); 
-				
+				ordemCombate=2;
+				Inimigos.inimigos(ordemCombate);
+				Combates.combate();
+								
 				vencedorCombate = Combates.isVencedorCombate();
+				
 				if(!vencedorCombate) {
 					System.out.println("\nFim de Jogo!!");
 				}else {
-					System.out.println("\nContinuar Jogo!!");
-					System.out.println(ordemCombate);
+						
+					pause(500);
+					MensagemAposDerrotarAlquimista.exibirMensagemAposDerrotarAlquimista();
+					pause(500);
+					
+					EscolhaBeberPocao.escolhaBeberPocao();
+					pause(500);
+					
+					MensagemPortaLider.exibirMensagemPortaLider();
+					pause(500);
+					
+					ordemCombate=3;
+					Inimigos.inimigos(ordemCombate);
+					Combates.combate();
+									
+					vencedorCombate = Combates.isVencedorCombate();				
+					
+					if(!vencedorCombate) {
+						System.out.println("\nFim de Jogo!!");
+					}else {
+					
+					}
+					
+					
 				}
 			}
 			
 		}
+}
+
+	public static String getNomeInimigo() {
+		return nomeInimigo;
 	}
 
-	public static String getOrdemCombate() {
-		return ordemCombate;
+	public static void setNomeInimigo(String nomeInimigo) {
+		RoteiroJogo.nomeInimigo = nomeInimigo;
 	}
-
-	public static void setOrdemCombate(String ordemCombate) {
-		RoteiroJogo.ordemCombate = ordemCombate;
-	}
-
 }

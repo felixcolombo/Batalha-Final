@@ -1,7 +1,6 @@
 package com.github.felixcolombo.entidades.roteiro.mensagens;
 
 import com.github.felixcolombo.entidades.Personagens;
-import com.github.felixcolombo.entidades.roteiro.EscolheuAndando;
 import com.github.felixcolombo.entidades.roteiro.RolamentoDados;
 
 public class MensagemDanoPorAndar {

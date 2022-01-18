@@ -3,38 +3,32 @@ package com.github.felixcolombo.entidades;
 import com.github.felixcolombo.entidades.inimigos.Alquimista;
 import com.github.felixcolombo.entidades.inimigos.Armeiro;
 import com.github.felixcolombo.entidades.inimigos.Lider;
-import com.github.felixcolombo.entidades.roteiro.RoteiroJogo;
 
 public class Inimigos {
 	
-	private static String nomeInimigo;
-	private static double poderInimigo;
-	private static double ataqueInimigo;
-	private static double defesaInimigo;
-	private static String ordemCombate = RoteiroJogo.getOrdemCombate();
+	public static String nomeInimigo;
+	public static double poderInimigo;
+	public static double ataqueInimigo;
+	public static double defesaInimigo;
+
 	
-	public static void inimigos() {
+	public static void inimigos(int ordemCombate){
 		
-		switch(ordemCombate) {
-		case "1":
-			Armeiro armeiro = new Armeiro();
-			break;
-		case "2":
-			Alquimista alquimista = new Alquimista();
-			break;
-		case "3":
-			Lider lider = new Lider();
-			break;
+		if(ordemCombate==1) {
+			new Armeiro();
+		}else if(ordemCombate==2) {
+			new Alquimista();
+		}else if(ordemCombate==3) {
+			new Lider();
 		}
-		
-		
+
 	}
 
 	public static double getPoderInimigo() {
 		return poderInimigo;
 	}
 
-	public void setPoderInimigo(double poderInimigo) {
+	public static void setPoderInimigo(double poderInimigo) {
 		Inimigos.poderInimigo = poderInimigo;
 	}
 
@@ -42,7 +36,7 @@ public class Inimigos {
 		return ataqueInimigo;
 	}
 
-	public void setAtaqueInimigo(double ataqueInimigo) {
+	public static void setAtaqueInimigo(double ataqueInimigo) {
 		Inimigos.ataqueInimigo = ataqueInimigo;
 	}
 
@@ -50,7 +44,7 @@ public class Inimigos {
 		return defesaInimigo;
 	}
 
-	public void setDefesaInimigo(double defesaInimigo) {
+	public static void setDefesaInimigo(double defesaInimigo) {
 		Inimigos.defesaInimigo = defesaInimigo;
 	}
 

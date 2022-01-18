@@ -8,11 +8,11 @@ public class Cajado extends Armas {
 	private final String ARTIGO_INDEFINIDO_ARMA = "seu";
 	private final String COMPLEMENTO_ARMA = "com seu cajado, lançando uma bola de fogo";
 	
-	public Cajado (String armaSelecionada) {
+	public Cajado () {
 		
-		this.setPoderArma(PODER_ARMA);
-		this.setArtigoIndefinidoArma(ARTIGO_INDEFINIDO_ARMA);
-		this.setComplementoArma(COMPLEMENTO_ARMA);
+		Armas.setPoderArma(PODER_ARMA);
+		Armas.setArtigoIndefinidoArma(ARTIGO_INDEFINIDO_ARMA);
+		Armas.setComplementoArma(COMPLEMENTO_ARMA);
 	}
 
 }

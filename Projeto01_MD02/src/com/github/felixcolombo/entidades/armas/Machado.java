@@ -8,11 +8,11 @@ public class Machado extends Armas{
 	private final String ARTIGO_INDEFINIDO_ARMA = "seu";
 	private final String COMPLEMENTO_ARMA = "com seu machado, acertando-o com bravura";
 	
-	public Machado(String armaSelecionada) {
+	public Machado() {
 		
-		this.setPoderArma(PODER_ARMA);
-		this.setArtigoIndefinidoArma(ARTIGO_INDEFINIDO_ARMA);
-		this.setComplementoArma(COMPLEMENTO_ARMA);
+		Armas.setPoderArma(PODER_ARMA);
+		Armas.setArtigoIndefinidoArma(ARTIGO_INDEFINIDO_ARMA);
+		Armas.setComplementoArma(COMPLEMENTO_ARMA);
 	}
 
 }

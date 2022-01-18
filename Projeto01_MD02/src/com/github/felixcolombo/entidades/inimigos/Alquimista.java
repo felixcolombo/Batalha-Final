@@ -11,10 +11,10 @@ public class Alquimista extends Inimigos{
 	
 	public Alquimista() {
 		
-		Inimigos.setNomeInimigo(NOME_INIMIGO);
-		this.setPoderInimigo(PODER_INIMIGO);
-		this.setAtaqueInimigo(ATAQUE_INIMIGO);
-		this.setDefesaInimigo(DEFESA_INIMIGO);
+		Alquimista.setNomeInimigo(NOME_INIMIGO);
+		Alquimista.setPoderInimigo(PODER_INIMIGO);
+		Alquimista.setAtaqueInimigo(ATAQUE_INIMIGO);
+		Alquimista.setDefesaInimigo(DEFESA_INIMIGO);
 	}
 
 }

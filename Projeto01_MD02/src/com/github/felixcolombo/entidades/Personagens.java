@@ -40,11 +40,11 @@ public class Personagens {
 		switch(escolha) {
 		case "1":
 			personagemSelecionado = "Mago";
-			Mago mago = new Mago();
+			new Mago();
 			break;
 		case "2":
 			personagemSelecionado = "Lenhador";
-			Lenhador lenhador = new Lenhador();
+			new Lenhador();
 			break;
 		}
 					

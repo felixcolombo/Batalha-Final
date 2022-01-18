@@ -42,11 +42,11 @@ public class Armas {
 		switch(escolha) {
 		case "1":
 			armaSelecionada = "Cajado";
-			Cajado cajado = new Cajado(armaSelecionada);
+			new Cajado();
 			break;
 		case "2":
 			armaSelecionada = "Machado";
-			Machado machado = new Machado(armaSelecionada);
+			new Machado();
 			break;
 		}
 		

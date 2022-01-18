@@ -6,10 +6,8 @@ import com.github.felixcolombo.entidades.Armas;
 import com.github.felixcolombo.entidades.Inimigos;
 import com.github.felixcolombo.entidades.NomeSexo;
 import com.github.felixcolombo.entidades.Personagens;
-import com.github.felixcolombo.entidades.roteiro.EscolhaAndarSaltarCorrer;
 import com.github.felixcolombo.entidades.roteiro.EscolhaMotivacao;
 import com.github.felixcolombo.entidades.roteiro.RolamentoDados;
-import com.github.felixcolombo.entidades.roteiro.RoteiroJogo;
 
 public class Combates {
 	
@@ -21,17 +19,16 @@ public class Combates {
 	    }
 	}
 	
-	private static String ordemCombate = RoteiroJogo.getOrdemCombate();
 	private static String ordemAtaque;
 	private static int parametroDados = 20;
 	private static double valorDadosSorteado;
 	
 	private static Scanner keyboard = new Scanner(System.in);
 	
-	private static String nomeInimigo = Inimigos.getNomeInimigo();
-	private static double poderInimigo = Inimigos.getPoderInimigo();
-	private static double ataqueInimigo = Inimigos.getAtaqueInimigo();
-	private static double defesaInimigo = Inimigos.getDefesaInimigo();
+	public static String nomeInimigo;
+	private static double poderInimigo;
+	private static double ataqueInimigo;
+	private static double defesaInimigo;
 	
 	private static double poderPersonagem = Personagens.getPoderPersonagem();
 	private static double ataquePersonagem = Personagens.getAtaquePersonagem();
@@ -53,6 +50,11 @@ public class Combates {
 	
 	public static void combate(){
 		
+		nomeInimigo = Inimigos.getNomeInimigo();
+		poderInimigo = Inimigos.getPoderInimigo();
+		ataqueInimigo = Inimigos.getAtaqueInimigo();
+		defesaInimigo = Inimigos.getDefesaInimigo();
+		
 		boolean erroOrdemAtaque;
 				
 		do {
@@ -70,6 +72,8 @@ public class Combates {
 		}while(erroOrdemAtaque);
 		
 		do {
+			
+			fimCombate = false;
 						
 			RolamentoDados.rolarDados(parametroDados);
 			valorDadosSorteado = RolamentoDados.getValorDadosSorteado();
@@ -169,7 +173,7 @@ public class Combates {
 			}
 						
 		}else if(poderPersonagem<=0) {
-			System.out.println("Você não estava preparado para a força do +"+nomeInimigo+".");
+			System.out.println("Você não estava preparado para a força do "+nomeInimigo+".");
 			
 			if(motivacaoPersonagem.equals("Vingança")) {
 				System.out.println("Não foi possível concluir sua vingança, e agora resta saber se alguém se vingará por você.");

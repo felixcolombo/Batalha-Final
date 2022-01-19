@@ -36,7 +36,7 @@ public class EscolhaBeberPocao {
 		switch(escolha) {
 		case "1":
 			MensagemBebeuPocao.exibirMensagemBebeuPocao();
-			Personagens.defesaPersonagem = Personagens.defesaPersonagem + 5;
+			RoteiroJogo.poderPersonagem = Personagens.getPoderPersonagem();
 			break;
 		
 		case "2":

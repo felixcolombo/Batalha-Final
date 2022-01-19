@@ -5,9 +5,9 @@ import java.util.Scanner;
 import com.github.felixcolombo.entidades.Armas;
 import com.github.felixcolombo.entidades.Inimigos;
 import com.github.felixcolombo.entidades.NomeSexo;
-import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.EscolhaMotivacao;
 import com.github.felixcolombo.entidades.roteiro.RolamentoDados;
+import com.github.felixcolombo.entidades.roteiro.RoteiroJogo;
 
 public class Combates {
 	
@@ -19,29 +19,29 @@ public class Combates {
 	    }
 	}
 	
+	private static String motivacaoPersonagem = EscolhaMotivacao.getMotivacaoEscolhida();
+	private static String complementoArma = Armas.getComplementoArma();
+	private static String sexoSelecionado = NomeSexo.getSexo();
+	private static String complementoSexo = NomeSexo.getComplementoSexo();
+	
 	private static String ordemAtaque;
 	private static int parametroDados = 20;
 	private static double valorDadosSorteado;
 	
 	private static Scanner keyboard = new Scanner(System.in);
 	
-	public static String nomeInimigo;
+	private static String nomeInimigo;
 	private static double poderInimigo;
 	private static double ataqueInimigo;
 	private static double defesaInimigo;
 	
-	private static double poderPersonagem = Personagens.getPoderPersonagem();
-	private static double ataquePersonagem = Personagens.getAtaquePersonagem();
-	private static double defesaPersonagem = Personagens.getDefesaPersonagem();
+	private static double poderPersonagem;
+	private static double ataquePersonagem;
+	private static double defesaPersonagem;
 	
-	private static String motivacaoPersonagem = EscolhaMotivacao.getMotivacaoEscolhida();
-	
-	private static String sexoSelecionado = NomeSexo.getSexo();
-	private static String complementoSexo = NomeSexo.getComplementoSexo();
-	
-	private static double poderArma = Armas.getPoderArma();
-	private static double fatorArma = Armas.getFatorArma();
-	private static String complementoArma = Armas.getComplementoArma();
+	private static double poderArma;
+	private static double fatorArma;
+
 	
 	private static boolean vencedorCombate;
 	private static double danoAtaque;
@@ -54,6 +54,13 @@ public class Combates {
 		poderInimigo = Inimigos.getPoderInimigo();
 		ataqueInimigo = Inimigos.getAtaqueInimigo();
 		defesaInimigo = Inimigos.getDefesaInimigo();
+		
+		poderPersonagem = RoteiroJogo.getPoderPersonagem();
+		ataquePersonagem = RoteiroJogo.getAtaquePersonagem();
+		defesaPersonagem = RoteiroJogo.getDefesaPersonagem();
+		
+		poderArma = Armas.getPoderArma();
+		fatorArma = Armas.getFatorArma();
 		
 		boolean erroOrdemAtaque;
 				
@@ -97,19 +104,19 @@ public class Combates {
 	
 	public static void personagemAtaca() {
 		if(valorDadosSorteado==1) {
-			System.out.println("Você errou seu ataque! O "+nomeInimigo+" não sofreu dano algum.");
+			System.out.println("Você errou seu ataque! O "+nomeInimigo+" não sofreu dano algum.\n");
 						
 		}else if(valorDadosSorteado==20) {
 			danoAtaque = valorDadosSorteado+ataquePersonagem+poderArma*fatorArma;
 			poderInimigo = poderInimigo-danoAtaque;
 			System.out.println("Você acertou um ataque crítico!");
-			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!");
+			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!\n");
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
 			danoAtaque = defesaInimigo-valorDadosSorteado-ataquePersonagem-poderArma*fatorArma;
 			poderInimigo = poderInimigo-danoAtaque;
-			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!");
+			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!\n");
 		
 		}
 		
@@ -118,7 +125,9 @@ public class Combates {
 		
 		}else {
 			System.out.println("O "+nomeInimigo+" não é páreo para o seu heroísmo, e jaz imóvel aos seus pés.");
-			Personagens.poderPersonagem = poderPersonagem;
+			
+			RoteiroJogo.poderPersonagem = poderPersonagem;
+			
 			vencedorCombate = true;
 			fimCombate = true;
 		}
@@ -127,19 +136,21 @@ public class Combates {
 	
 	public static void inimigoAtaca() {
 		if(valorDadosSorteado==1) {
-			System.out.println("O "+nomeInimigo+" errou o ataque! Você não sofreu dano.");
+			System.out.println("O "+nomeInimigo+" errou o ataque! Você não sofreu dano.\n");
 		
 		}else if(valorDadosSorteado==20) {
 			danoAtaque = valorDadosSorteado+ataqueInimigo;
 			poderPersonagem = poderPersonagem-danoAtaque;
 			System.out.println("O "+nomeInimigo+" acertou um ataque crítico!");
-			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" pontos de vida.");
+			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" "
+					+ "pontos de vida.\n");
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
 			danoAtaque = defesaPersonagem-valorDadosSorteado-ataqueInimigo;
 			poderPersonagem = poderPersonagem-danoAtaque;
-			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" pontos de vida.");
+			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" "
+					+ "pontos de vida.\n");
 		
 		}
 		

@@ -4,7 +4,7 @@ import com.github.felixcolombo.entidades.Personagens;
 
 public class Lenhador extends Personagens {
 	
-	private final double PODER_PERSONAGEM = 150;
+	private final double PODER_PERSONAGEM = 1500;
 	private final double ATAQUE_PERSONAGEM = 10;
 	private final double DEFESA_PERSONAGEM = 100;
 	

@@ -10,9 +10,9 @@ public class Personagens {
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String escolha;
 	private static String personagemSelecionado;
-	public static double poderPersonagem;
+	private static double poderPersonagem;
 	private static double ataquePersonagem;
-	public static double defesaPersonagem;
+	private static double defesaPersonagem;
 		
 	public static void escolherPersonagem() {
 		

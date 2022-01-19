@@ -7,6 +7,14 @@ import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemVingaca;
 
 public class EscolhaMotivacao {
 	
+	public static void pause(int ms) {
+	    try {
+	        Thread.sleep(ms);
+	    } catch (InterruptedException e) {
+	        System.err.format("IOException: %s%n", e);
+	    }
+	}
+	
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String escolha;
 	private static String motivacaoEscolhida;
@@ -14,6 +22,9 @@ public class EscolhaMotivacao {
 	public static void escolherMotivacao() {
 		// TODO Auto-generated method stub
 		boolean erro;
+		
+		System.out.println("Escolha sua motivação para invadir a caverna do inimigo e derrotá-lo:");
+		pause(500);
 		
 		do {
 			erro=false;

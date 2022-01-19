@@ -2,7 +2,6 @@ package com.github.felixcolombo.entidades.roteiro;
 
 import java.util.Scanner;
 
-import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemNaoPegouArmaduras;
 import com.github.felixcolombo.entidades.roteiro.mensagens.MensagemPegouArmaduras;
 
@@ -36,7 +35,7 @@ public class EscolhaPegarArmadurasArmeiro {
 		switch(escolha) {
 		case "1":
 			MensagemPegouArmaduras.exibirMensagemPegouArmaduras();
-			Personagens.defesaPersonagem = Personagens.defesaPersonagem + 5;
+			RoteiroJogo.defesaPersonagem = RoteiroJogo.defesaPersonagem + 5;
 			break;
 		
 		case "2":

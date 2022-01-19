@@ -6,10 +6,10 @@ import com.github.felixcolombo.entidades.inimigos.Lider;
 
 public class Inimigos {
 	
-	public static String nomeInimigo;
-	public static double poderInimigo;
-	public static double ataqueInimigo;
-	public static double defesaInimigo;
+	private static String nomeInimigo;
+	private static double poderInimigo;
+	private static double ataqueInimigo;
+	private static double defesaInimigo;
 
 	
 	public static void inimigos(int ordemCombate){

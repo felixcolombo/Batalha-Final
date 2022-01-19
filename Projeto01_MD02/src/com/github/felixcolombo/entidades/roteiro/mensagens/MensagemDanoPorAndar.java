@@ -1,7 +1,7 @@
 package com.github.felixcolombo.entidades.roteiro.mensagens;
 
-import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.RolamentoDados;
+import com.github.felixcolombo.entidades.roteiro.RoteiroJogo;
 
 public class MensagemDanoPorAndar {
 	
@@ -9,6 +9,6 @@ public class MensagemDanoPorAndar {
 		
 		System.out.println("As flechas que o acertaram causaram um dano de "
 				+RolamentoDados.getValorDadosSorteado()+".\n"
-				+ "Agora está com "+Personagens.getPoderPersonagem());
+				+ "Agora está com "+RoteiroJogo.getPoderPersonagem());
 	}
 }

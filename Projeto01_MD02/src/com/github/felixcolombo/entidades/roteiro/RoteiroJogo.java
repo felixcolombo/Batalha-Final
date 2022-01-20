@@ -42,6 +42,8 @@ public class RoteiroJogo {
 		ataquePersonagem = Personagens.getAtaquePersonagem();
 		defesaPersonagem = Personagens.getDefesaPersonagem();
 		
+		ExibirDadosPersonagens.exibirDadosPersonagens();
+		
 		MensagemInicial.mensagemInicial();
 		pause(1000);
 		
@@ -58,18 +60,11 @@ public class RoteiroJogo {
 			System.out.println("\nFim de Jogo!!");
 		}else {
 			
-			System.out.println(poderPersonagem);
-			System.out.println(ataquePersonagem);
-			System.out.println(defesaPersonagem);
-			
 			EscolhaAndarSaltarCorrer.escolherAndarSaltarCorrer();
 			pause(500);
 			
-			System.out.println(poderPersonagem);
-			System.out.println(ataquePersonagem);
-			System.out.println(defesaPersonagem);
-			
 			MensagemSalaQuadrada.exibirMensagemSalaQuadrada();
+			
 			MensagemPortaDireita.exibirMensagemPortaDireita();
 			
 			ordemCombate=1;
@@ -80,21 +75,15 @@ public class RoteiroJogo {
 			if(!vencedorCombate) {
 				System.out.println("\nFim de Jogo!!");
 			}else {
-				
-				System.out.println(poderPersonagem);
-				System.out.println(ataquePersonagem);
-				System.out.println(defesaPersonagem);
-				
+
 				pause(500);
+				
 				MensagemAposDerrotarArmeiro.exibirMensagemAposDerrotarArmeiro();
-				pause(500);
+				
+				ExibirDadosPersonagens.exibirDadosPersonagens();
 				
 				EscolhaPegarArmadurasArmeiro.escolhaPegarArmadurasArmeiro();
 				pause(500);
-				
-				System.out.println(poderPersonagem);
-				System.out.println(ataquePersonagem);
-				System.out.println(defesaPersonagem);
 				
 				MensagemPortaEsquerda.exibirMensagemPortaEsquerda();
 				pause(500);
@@ -110,19 +99,14 @@ public class RoteiroJogo {
 				}else {
 						
 					pause(500);
-					MensagemAposDerrotarAlquimista.exibirMensagemAposDerrotarAlquimista();
-					pause(500);
 					
-					System.out.println(poderPersonagem);
-					System.out.println(ataquePersonagem);
-					System.out.println(defesaPersonagem);
+					MensagemAposDerrotarAlquimista.exibirMensagemAposDerrotarAlquimista();
+
+					ExibirDadosPersonagens.exibirDadosPersonagens();
 					
 					EscolhaBeberPocao.escolhaBeberPocao();
-					pause(500);
-					
-					System.out.println(poderPersonagem);
-					System.out.println(ataquePersonagem);
-					System.out.println(defesaPersonagem);
+
+					ExibirDadosPersonagens.exibirDadosPersonagens();
 					
 					MensagemPortaLider.exibirMensagemPortaLider();
 					pause(500);
@@ -136,17 +120,16 @@ public class RoteiroJogo {
 					if(!vencedorCombate) {
 						System.out.println("\nFim de Jogo!!");
 					}else {
-						System.out.println("\nVocê Conseguiu!!!!");
+						System.out.println("\nVocê Conseguiu!!!!\n");
 						pause(500);
+						
 						MensagemVitoria.exibirMensagemVitoria();
 						pause(500);
+						
 						MensagemFinal.exibirMensagemFinal();
 						pause(500);
-						System.out.println("\nFim de Jogo!!");
 						
-						System.out.println(poderPersonagem);
-						System.out.println(ataquePersonagem);
-						System.out.println(defesaPersonagem);
+						System.out.println("\nFim de Jogo!!");
 					}
 				}
 			}

@@ -13,7 +13,7 @@ public class MensagemPortaDireita {
 				+ "Enquanto seu olhar percorre a sala, você ouve a porta se fechando e gira rapidamente para olhar\r\n"
 				+ "para trás. Ali, de pé entre você e a porta fechada, bloqueando o caminho do seu destino, está um\r\n"
 				+ "dos capitães do inimigo. Um orque horrendo, de armadura, capacete e espada em punho, em\r\n"
-				+ "posição de combate. Ele avança em sua direção.\n\n");
+				+ "posição de combate. Ele avança em sua direção.\n");
 	}
 
 }

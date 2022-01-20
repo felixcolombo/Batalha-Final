@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class NomeSexo {
 	
+	public static void pause(int ms) {
+	    try {
+	        Thread.sleep(ms);
+	    } catch (InterruptedException e) {
+	        System.err.format("IOException: %s%n", e);
+	    }
+	}
+	
 	private static Scanner keyboard = new Scanner(System.in);
 	private static String nome;
 	private static String sexo;
@@ -12,9 +20,12 @@ public class NomeSexo {
 	private static String complementoSexo;
 	
 	public static void nomeSexo() {
-		
-		boolean erro;
 				
+		boolean erro;
+		
+		System.out.println("\n-Qual seu nome e sexo?\n");
+		pause(500);
+		
 		System.out.println(" Nome:");
 		setNome(keyboard.next());
 		

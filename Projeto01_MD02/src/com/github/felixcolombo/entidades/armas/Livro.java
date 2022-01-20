@@ -2,12 +2,12 @@ package com.github.felixcolombo.entidades.armas;
 
 import com.github.felixcolombo.entidades.Armas;
 
-public class Cajado extends Armas {
+public class Livro extends Armas {
 	
 	private final double PODER_ARMA = 3;
-	private final String COMPLEMENTO_ARMA = "com seu cajado, lançando uma bola de fogo";
+	private final String COMPLEMENTO_ARMA = "absorvendo energia do livro com uma mão e liberando com a outra";
 	
-	public Cajado () {
+	public Livro() {
 		
 		Armas.setPoderArma(PODER_ARMA);
 		Armas.setComplementoArma(COMPLEMENTO_ARMA);

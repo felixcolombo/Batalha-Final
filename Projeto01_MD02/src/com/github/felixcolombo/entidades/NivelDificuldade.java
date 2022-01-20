@@ -4,14 +4,26 @@ import java.util.Scanner;
 
 public class NivelDificuldade {
 	
+	public static void pause(int ms) {
+	    try {
+	        Thread.sleep(ms);
+	    } catch (InterruptedException e) {
+	        System.err.format("IOException: %s%n", e);
+	    }
+	}
+	
 	private static Scanner keyboard = new Scanner(System.in);
-	private static String nivelEscolhido;
+	private static double fatorNivelInimigo;
+	private static double fatorNivelPersonagem;
 	private static String nivel;
 	
 	public static void escolherNivel() {
 		
 		boolean erro;
-			
+		
+		System.out.println("-Vamos iniciar escolhendo o nível de dificuldade: \n");
+		pause(500);
+		
 		do {
 			erro=false;
 			
@@ -33,23 +45,39 @@ public class NivelDificuldade {
 		
 		switch(nivel) {
 		case "1":
-			nivelEscolhido = "Nível Fácil";
+			fatorNivelInimigo = 0.8;
+			fatorNivelPersonagem = 1;
 			break;
 		case "2":
-			nivelEscolhido = "Nível Normal";
+			fatorNivelInimigo = 1;
+			fatorNivelPersonagem = 1;
 			break;
 		case "3":
-			nivelEscolhido = "Nível Difícil";
+			fatorNivelInimigo = 1;
+			fatorNivelPersonagem = 0.9;
 			break;
 		}
 		
 	}
 
-	public static String getNivelDificuldade() {
-		// TODO Auto-generated method stub
-		return nivelEscolhido;
+	public static double getFatorNivelInimigo() {
+		return fatorNivelInimigo;
 	}
-		
+
+	public static void setFatorNivelInimigo(double fatorNivelInimigo) {
+		NivelDificuldade.fatorNivelInimigo = fatorNivelInimigo;
+	}
+
+	public static double getFatorNivelPersonagem() {
+		return fatorNivelPersonagem;
+	}
+
+	public static void setFatorNivelPersonagem(double fatorNivelPersonagem) {
+		NivelDificuldade.fatorNivelPersonagem = fatorNivelPersonagem;
+	}
+
+
+
 }
 	
 

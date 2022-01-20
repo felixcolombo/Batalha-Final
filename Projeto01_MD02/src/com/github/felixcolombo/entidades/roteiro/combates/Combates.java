@@ -47,6 +47,7 @@ public class Combates {
 
 	
 	private static boolean vencedorCombate;
+	private static double forcaAtaque;
 	private static double danoAtaque;
 	
 	static boolean fimCombate=false;
@@ -120,7 +121,10 @@ public class Combates {
 			System.out.println("Você errou seu ataque! O "+nomeInimigo+" não sofreu dano algum.\n");
 						
 		}else if(valorDadosSorteado==20) {
-			danoAtaque = (valorDadosSorteado+ataquePersonagem+poderArma*fatorArma)*fatorNivelPersonagem;
+			
+			forcaAtaque = ((valorDadosSorteado+ataquePersonagem+poderArma*fatorArma)*fatorNivelPersonagem);
+			danoAtaque = forcaAtaque;
+
 			poderInimigo = poderInimigo-danoAtaque;
 			
 			System.out.println("Você acertou um ataque crítico!");
@@ -128,11 +132,17 @@ public class Combates {
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
-			danoAtaque = defesaInimigo-((valorDadosSorteado-ataquePersonagem-poderArma*fatorArma)*fatorNivelPersonagem);
+			forcaAtaque = (valorDadosSorteado+ataquePersonagem+poderArma*fatorArma)*fatorNivelPersonagem;
+
+			if(forcaAtaque>defesaInimigo) {
+				danoAtaque = forcaAtaque-defesaInimigo;
+			}else {
+				danoAtaque = defesaInimigo-forcaAtaque;
+			}
+			
 			poderInimigo = poderInimigo-danoAtaque;
 			
 			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!\n");
-		
 		}
 		
 		if(poderInimigo>0) {
@@ -154,7 +164,10 @@ public class Combates {
 			System.out.println("O "+nomeInimigo+" errou o ataque! Você não sofreu dano.\n");
 		
 		}else if(valorDadosSorteado==20) {
-			danoAtaque = (valorDadosSorteado+ataqueInimigo)*fatorNivelInimigo;
+
+			forcaAtaque = (valorDadosSorteado+ataqueInimigo)*fatorNivelInimigo;
+			danoAtaque = forcaAtaque;
+
 			poderPersonagem = poderPersonagem-danoAtaque;
 			
 			System.out.println("O "+nomeInimigo+" acertou um ataque crítico!");
@@ -163,7 +176,13 @@ public class Combates {
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
-			danoAtaque = defesaPersonagem-((valorDadosSorteado-ataqueInimigo)*fatorNivelInimigo);
+			forcaAtaque = ((valorDadosSorteado+ataqueInimigo)*fatorNivelInimigo);
+			if(forcaAtaque>defesaPersonagem) {
+				danoAtaque = forcaAtaque-defesaPersonagem;
+			}else {
+				danoAtaque = defesaPersonagem-forcaAtaque;
+			}
+			
 			poderPersonagem = poderPersonagem-danoAtaque;
 			
 			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" "

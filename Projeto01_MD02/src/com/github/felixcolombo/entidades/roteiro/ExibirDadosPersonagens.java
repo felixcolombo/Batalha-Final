@@ -14,7 +14,7 @@ public class ExibirDadosPersonagens {
 		System.out.println("Aqui estão seus dados: \n");
 		System.out.println("Seu Poder: "+RoteiroJogo.getPoderPersonagem());
 		System.out.println("Seu Ataque: "+RoteiroJogo.getAtaquePersonagem());
-		System.out.println("Sua Defesa: "+RoteiroJogo.getDefesaPersonagem());
+		System.out.println("Sua Defesa: "+RoteiroJogo.getDefesaPersonagem()+"\n");
 		
 		pause(800);
 	}

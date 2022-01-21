@@ -5,7 +5,7 @@ import com.github.felixcolombo.entidades.Armas;
 public class Machado extends Armas{
 	
 	private final double PODER_ARMA = 3;
-	private final String COMPLEMENTO_ARMA = "seu mchado de guerra de lâmina dupla";
+	private final String COMPLEMENTO_ARMA = "com seu mchado de guerra de lâmina dupla";
 	
 	public Machado() {
 		

@@ -45,8 +45,8 @@ public class Armas {
 			String menu = "\n";
 			menu += "    1 - Cajado \n";
 			menu += "    2 - Machado \n";
-			menu += "    3 - Martelo \n";
-			menu += "    4 - Espada \n";
+			menu += "    3 - Arco e Flecha \n";
+			menu += "    4 - Besta e Virote \n";
 			menu += "    5 - Livro \n";
 			menu += "    6 - Clava \n";
 			menu += "    7 - Espada ";

@@ -135,12 +135,8 @@ public class Combates {
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
 			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
-
-			if(forcaAtaque>defesaInimigo) {
-				danoAtaque = forcaAtaque-defesaInimigo;
-			}else {
-				danoAtaque = defesaInimigo-forcaAtaque;
-			}
+			
+			danoAtaque = VerificaAtaque.verificaAtaque(forcaAtaque, defesaInimigo);
 			
 			poderInimigo = poderInimigo-danoAtaque;
 			
@@ -181,11 +177,7 @@ public class Combates {
 			
 			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
 			
-			if(forcaAtaque>defesaPersonagem) {
-				danoAtaque = forcaAtaque-defesaPersonagem;
-			}else {
-				danoAtaque = defesaPersonagem-forcaAtaque;
-			}
+			danoAtaque = VerificaAtaque.verificaAtaque(forcaAtaque, defesaPersonagem);
 			
 			poderPersonagem = poderPersonagem-danoAtaque;
 			
@@ -218,6 +210,7 @@ public class Combates {
 			}else {
 				System.out.println("Você não estava preparado para a força do +"+nomeInimigo+", "
 						+ "e decide fugir para que possa tentar novamente em uma próxima vez.");
+				
 				vencedorCombate = false;
 				fimCombate = true;
 			

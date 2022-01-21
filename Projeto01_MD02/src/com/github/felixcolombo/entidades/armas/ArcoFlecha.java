@@ -5,7 +5,7 @@ import com.github.felixcolombo.entidades.Armas;
 public class ArcoFlecha extends Armas{
 	
 	private final double PODER_ARMA = 3;
-	private final String COMPLEMENTO_ARMA = "sua flecha certeira no alvo";
+	private final String COMPLEMENTO_ARMA = "com sua flecha certeira no alvo";
 	
 	public ArcoFlecha() {
 		

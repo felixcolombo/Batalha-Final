@@ -132,6 +132,7 @@ public class RoteiroJogo {
 						pause(500);
 						
 						System.out.println("\nFim de Jogo!!");
+						ExibirDadosPersonagens.exibirDadosPersonagens();
 					}
 				}
 			}

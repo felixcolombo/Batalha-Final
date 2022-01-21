@@ -10,6 +10,7 @@ public class Inimigos {
 	private static double poderInimigo;
 	private static double ataqueInimigo;
 	private static double defesaInimigo;
+	private static double poderArmaInimigo;
 
 	
 	public static void inimigos(int ordemCombate){
@@ -54,6 +55,14 @@ public class Inimigos {
 
 	public static void setNomeInimigo(String nomeInimigo) {
 		Inimigos.nomeInimigo = nomeInimigo;
+	}
+
+	public static double getPoderArmaInimigo() {
+		return poderArmaInimigo;
+	}
+
+	public static void setPoderArmaInimigo(double poderArmaInimigo) {
+		Inimigos.poderArmaInimigo = poderArmaInimigo;
 	}
 
 }

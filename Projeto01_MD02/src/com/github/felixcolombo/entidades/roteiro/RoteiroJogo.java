@@ -1,5 +1,6 @@
 package com.github.felixcolombo.entidades.roteiro;
 
+import com.github.felixcolombo.entidades.Armas;
 import com.github.felixcolombo.entidades.Inimigos;
 import com.github.felixcolombo.entidades.Personagens;
 import com.github.felixcolombo.entidades.roteiro.combates.Combates;
@@ -23,9 +24,8 @@ public class RoteiroJogo {
 	public static double poderPersonagem;
 	private static double ataquePersonagem;
 	public static double defesaPersonagem;
-	
-	private static double poderArma;
-	private static double fatorArma;
+	private static double poderArmaPersonagem;
+	private static double fatorArmaPersonagem;
 	
 	public static void pause(int ms) {
 	    try {
@@ -41,6 +41,8 @@ public class RoteiroJogo {
 		poderPersonagem = Personagens.getPoderPersonagem();
 		ataquePersonagem = Personagens.getAtaquePersonagem();
 		defesaPersonagem = Personagens.getDefesaPersonagem();
+		poderArmaPersonagem = Armas.getPoderArma();
+		fatorArmaPersonagem = Armas.getFatorArma();
 		
 		ExibirDadosPersonagens.exibirDadosPersonagens();
 		
@@ -160,19 +162,20 @@ public class RoteiroJogo {
 		RoteiroJogo.defesaPersonagem = defesaPersonagem;
 	}
 
-	public static double getPoderArma() {
-		return poderArma;
+	public static double getPoderArmaPersonagem() {
+		return poderArmaPersonagem;
 	}
 
-	public static void setPoderArma(double poderArma) {
-		RoteiroJogo.poderArma = poderArma;
+	public static void setPoderArmaPersonagem(double poderArmaPersonagem) {
+		RoteiroJogo.poderArmaPersonagem = poderArmaPersonagem;
 	}
 
-	public static double getFatorArma() {
-		return fatorArma;
+	public static double getFatorArmaPersonagem() {
+		return fatorArmaPersonagem;
 	}
 
-	public static void setFatorArma(double fatorArma) {
-		RoteiroJogo.fatorArma = fatorArma;
+	public static void setFatorArmaPersonagem(double fatorArmaPersonagem) {
+		RoteiroJogo.fatorArmaPersonagem = fatorArmaPersonagem;
 	}
+
 }

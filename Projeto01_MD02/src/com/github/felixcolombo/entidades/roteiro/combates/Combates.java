@@ -36,14 +36,15 @@ public class Combates {
 	private static double ataqueInimigo;
 	private static double defesaInimigo;
 	private static double fatorNivelInimigo;
+	private static double poderArmaInimigo;
+	private static double fatorArmaInimigo;
 	
 	private static double poderPersonagem;
 	private static double ataquePersonagem;
 	private static double defesaPersonagem;
 	private static double fatorNivelPersonagem;
-	
-	private static double poderArma;
-	private static double fatorArma;
+	private static double poderArmaPersonagem;
+	private static double fatorArmaPersonagem;
 
 	
 	private static boolean vencedorCombate;
@@ -55,14 +56,18 @@ public class Combates {
 	public static void combate(){
 		
 		motivacaoPersonagem = EscolhaMotivacao.getMotivacaoEscolhida();
-		complementoArma = Armas.getComplementoArma();
 		sexoSelecionado = NomeSexo.getSexo();
 		complementoSexo = NomeSexo.getComplementoSexo();
+		poderArmaPersonagem = Armas.getPoderArma();
+		fatorArmaPersonagem = Armas.getFatorArma();
+		complementoArma = Armas.getComplementoArma();
 		
 		nomeInimigo = Inimigos.getNomeInimigo();
 		poderInimigo = Inimigos.getPoderInimigo();
 		ataqueInimigo = Inimigos.getAtaqueInimigo();
 		defesaInimigo = Inimigos.getDefesaInimigo();
+		poderArmaInimigo = Inimigos.getPoderArmaInimigo();
+		fatorArmaInimigo = 1;
 		
 		poderPersonagem = RoteiroJogo.getPoderPersonagem();
 		ataquePersonagem = RoteiroJogo.getAtaquePersonagem();
@@ -70,10 +75,6 @@ public class Combates {
 		
 		fatorNivelInimigo = NivelDificuldade.getFatorNivelInimigo();
 		fatorNivelPersonagem = NivelDificuldade.getFatorNivelPersonagem();
-		
-		poderArma = Armas.getPoderArma();
-		fatorArma = Armas.getFatorArma();
-
 		
 		boolean erroOrdemAtaque;
 				
@@ -122,7 +123,8 @@ public class Combates {
 						
 		}else if(valorDadosSorteado==20) {
 			
-			forcaAtaque = ((valorDadosSorteado+ataquePersonagem+poderArma*fatorArma)*fatorNivelPersonagem);
+			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
+			
 			danoAtaque = forcaAtaque;
 
 			poderInimigo = poderInimigo-danoAtaque;
@@ -132,7 +134,7 @@ public class Combates {
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
-			forcaAtaque = (valorDadosSorteado+ataquePersonagem+poderArma*fatorArma)*fatorNivelPersonagem;
+			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
 
 			if(forcaAtaque>defesaInimigo) {
 				danoAtaque = forcaAtaque-defesaInimigo;
@@ -165,7 +167,8 @@ public class Combates {
 		
 		}else if(valorDadosSorteado==20) {
 
-			forcaAtaque = (valorDadosSorteado+ataqueInimigo)*fatorNivelInimigo;
+			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
+			
 			danoAtaque = forcaAtaque;
 
 			poderPersonagem = poderPersonagem-danoAtaque;
@@ -176,7 +179,8 @@ public class Combates {
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
-			forcaAtaque = ((valorDadosSorteado+ataqueInimigo)*fatorNivelInimigo);
+			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
+			
 			if(forcaAtaque>defesaPersonagem) {
 				danoAtaque = forcaAtaque-defesaPersonagem;
 			}else {

@@ -6,6 +6,7 @@ import com.github.felixcolombo.entidades.armas.ArcoFlecha;
 import com.github.felixcolombo.entidades.armas.BestaVirote;
 import com.github.felixcolombo.entidades.armas.Cajado;
 import com.github.felixcolombo.entidades.armas.Clava;
+import com.github.felixcolombo.entidades.armas.Espada;
 import com.github.felixcolombo.entidades.armas.Livro;
 import com.github.felixcolombo.entidades.armas.Machado;
 
@@ -47,13 +48,14 @@ public class Armas {
 			menu += "    3 - Martelo \n";
 			menu += "    4 - Espada \n";
 			menu += "    5 - Livro \n";
-			menu += "    6 - Clava ";
+			menu += "    6 - Clava \n";
+			menu += "    7 - Espada ";
 							
 			System.out.println(menu);
 			escolha= keyboard.next();
 				
 			if((!escolha.equals("1"))&&(!escolha.equals("2"))&&(!escolha.equals("3"))&&(!escolha.equals("4"))
-					&&(!escolha.equals("5"))&&(!escolha.equals("6"))) {
+					&&(!escolha.equals("5"))&&(!escolha.equals("6"))&&(!escolha.equals("7"))) {
 				System.out.println("Oops!! Escolha inválida!");
 				System.out.println("Escolha entre as opções abaixo:");
 				erro=true;
@@ -87,6 +89,10 @@ public class Armas {
 			armaSelecionada = "Clava";
 			new Clava();
 			break;
+		case "7":
+			armaSelecionada = "Espada";
+			new Espada();
+			break;
 		}
 		
 		personagemSelecionado = Personagens.getPersonagemSelecionado();
@@ -113,6 +119,10 @@ public class Armas {
 				}else {
 					fatorArma = 0.5;
 				}
+		}
+		
+		if(armaSelecionada.equals("Espada")) {
+			fatorArma = 0.3;
 		}
 		
 	}

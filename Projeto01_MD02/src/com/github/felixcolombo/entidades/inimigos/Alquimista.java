@@ -1,6 +1,7 @@
 package com.github.felixcolombo.entidades.inimigos;
 
 import com.github.felixcolombo.entidades.Inimigos;
+import com.github.felixcolombo.entidades.armas.Cajado;
 
 public class Alquimista extends Inimigos{
 	
@@ -8,6 +9,7 @@ public class Alquimista extends Inimigos{
 	private final double PODER_INIMIGO = 120;
 	private final double ATAQUE_INIMIGO = 7;
 	private final double DEFESA_INIMIGO = 120;
+	private final double PODER_ARMA_INIMIGO = Cajado.getPoderArma();
 	
 	public Alquimista() {
 		
@@ -15,6 +17,7 @@ public class Alquimista extends Inimigos{
 		Alquimista.setPoderInimigo(PODER_INIMIGO);
 		Alquimista.setAtaqueInimigo(ATAQUE_INIMIGO);
 		Alquimista.setDefesaInimigo(DEFESA_INIMIGO);
+		Alquimista.setPoderArmaInimigo(PODER_ARMA_INIMIGO);
 	}
 
 }

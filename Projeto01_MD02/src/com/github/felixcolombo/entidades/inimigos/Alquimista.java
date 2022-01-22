@@ -6,10 +6,10 @@ import com.github.felixcolombo.entidades.armas.Cajado;
 public class Alquimista extends Inimigos{
 	
 	private final String NOME_INIMIGO = "Alquimista";
-	private final double PODER_INIMIGO = 120;
-	private final double ATAQUE_INIMIGO = 7;
-	private final double DEFESA_INIMIGO = 120;
-	private final double PODER_ARMA_INIMIGO = Cajado.getPoderArma();
+	private final double PODER_INIMIGO = 500;
+	private final double ATAQUE_INIMIGO = 70;
+	private final double DEFESA_INIMIGO = 20;
+	private final double PODER_ARMA_INIMIGO = Cajado.getPODER_ARMA();
 	
 	public Alquimista() {
 		

@@ -10,7 +10,6 @@ public class RolamentoDados {
 	public static void rolarDados(int parametroDados) {
 
 		valorDadosSorteado = valorDados.nextInt(parametroDados)+1;
-		System.out.println("/n/n"+valorDadosSorteado+"\n\n");
 	}
 
 	public static double getValorDadosSorteado() {

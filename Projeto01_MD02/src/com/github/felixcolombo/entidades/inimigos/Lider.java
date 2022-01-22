@@ -6,10 +6,10 @@ import com.github.felixcolombo.entidades.armas.Machado;
 public class Lider extends Inimigos{
 	
 	private final String NOME_INIMIGO = "Líder";
-	private final double PODER_INIMIGO = 150;
-	private final double ATAQUE_INIMIGO = 10;
-	private final double DEFESA_INIMIGO = 150;
-	private final double PODER_ARMA_INIMIGO = Machado.getPoderArma();
+	private final double PODER_INIMIGO = 900;
+	private final double ATAQUE_INIMIGO = 90;
+	private final double DEFESA_INIMIGO = 30;
+	private final double PODER_ARMA_INIMIGO = Machado.getPODER_ARMA();
 	
 	public Lider() {
 		

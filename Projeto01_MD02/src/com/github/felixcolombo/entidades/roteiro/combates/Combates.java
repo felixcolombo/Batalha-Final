@@ -101,11 +101,13 @@ public class Combates {
 						
 			if(ordemAtaque.equals("1")) {
 				pause(600);
+				forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
 				personagemAtaca();
 				pause(600);
 			
 			} else if(ordemAtaque.equals("2")) {
 				pause(600);
+				forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
 				inimigoAtaca();
 				pause(600);
 
@@ -123,10 +125,8 @@ public class Combates {
 						
 		}else if(valorDadosSorteado==20) {
 			
-			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
-			
 			danoAtaque = forcaAtaque;
-
+			
 			poderInimigo = poderInimigo-danoAtaque;
 			
 			System.out.println("Você acertou um ataque crítico!");
@@ -134,9 +134,7 @@ public class Combates {
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
-			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
-			
-			danoAtaque = VerificaAtaque.verificaAtaque(forcaAtaque, defesaInimigo);
+			danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaInimigo);
 			
 			poderInimigo = poderInimigo-danoAtaque;
 			
@@ -163,8 +161,6 @@ public class Combates {
 		
 		}else if(valorDadosSorteado==20) {
 
-			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
-			
 			danoAtaque = forcaAtaque;
 
 			poderPersonagem = poderPersonagem-danoAtaque;
@@ -175,9 +171,7 @@ public class Combates {
 		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
 			
-			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
-			
-			danoAtaque = VerificaAtaque.verificaAtaque(forcaAtaque, defesaPersonagem);
+			danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaPersonagem);
 			
 			poderPersonagem = poderPersonagem-danoAtaque;
 			

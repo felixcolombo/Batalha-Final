@@ -4,9 +4,9 @@ import com.github.felixcolombo.entidades.Personagens;
 
 public class Arqueiro extends Personagens{
 	
-	private final double PODER_PERSONAGEM = 1500;
-	private final double ATAQUE_PERSONAGEM = 10;
-	private final double DEFESA_PERSONAGEM = 100;
+	private final double PODER_PERSONAGEM = 1200;
+	private final double ATAQUE_PERSONAGEM = 60;
+	private final double DEFESA_PERSONAGEM = 30;
 	
 	public Arqueiro() {
 		

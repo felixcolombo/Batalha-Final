@@ -14,6 +14,8 @@ public class EscolhaPegarArmadurasArmeiro {
 		
 		boolean erro;
 		
+		System.out.println("O que você deseja fazer?");
+		
 		do {
 			erro=false;
 				

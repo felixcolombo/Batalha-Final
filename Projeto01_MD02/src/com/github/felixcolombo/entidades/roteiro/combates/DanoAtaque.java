@@ -8,7 +8,6 @@ public class DanoAtaque {
 		
 		danoAtaque = forcaAtaque-defesa;
 	
-		System.out.println(danoAtaque);
 		return danoAtaque;
 		
 	}

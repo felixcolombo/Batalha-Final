@@ -26,7 +26,7 @@ public class Combates {
 	private static String complementoSexo;
 	
 	private static String ordemAtaque;
-	private static int parametroDados = 20;
+	private static int parametroDados;
 	private static double valorDadosSorteado;
 	
 	private static Scanner keyboard = new Scanner(System.in);
@@ -54,6 +54,8 @@ public class Combates {
 	static boolean fimCombate=false;
 	
 	public static void combate(){
+		
+		parametroDados = 20;
 		
 		motivacaoPersonagem = EscolhaMotivacao.getMotivacaoEscolhida();
 		sexoSelecionado = NomeSexo.getSexo();
@@ -123,22 +125,24 @@ public class Combates {
 		if(valorDadosSorteado==1) {
 			System.out.println("Você errou seu ataque! O "+nomeInimigo+" não sofreu dano algum.\n");
 						
-		}else if(valorDadosSorteado==20) {
+		}else if(valorDadosSorteado==parametroDados) {
 			
 			danoAtaque = forcaAtaque;
 			
 			poderInimigo = poderInimigo-danoAtaque;
 			
 			System.out.println("Você acertou um ataque crítico!");
-			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!\n");
+			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!"
+					+ " Agora ele possui "+poderInimigo+" pontos de vida!\n");
 		
-		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
+		}else if((valorDadosSorteado>1) && (valorDadosSorteado<parametroDados)) {
 			
 			danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaInimigo);
 			
 			poderInimigo = poderInimigo-danoAtaque;
 			
-			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!\n");
+			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!"
+					+ " Agora ele possui "+poderInimigo+" pontos de vida!\n");
 		}
 		
 		if(poderInimigo>0) {
@@ -159,7 +163,7 @@ public class Combates {
 		if(valorDadosSorteado==1) {
 			System.out.println("O "+nomeInimigo+" errou o ataque! Você não sofreu dano.\n");
 		
-		}else if(valorDadosSorteado==20) {
+		}else if(valorDadosSorteado==parametroDados) {
 
 			danoAtaque = forcaAtaque;
 
@@ -169,7 +173,7 @@ public class Combates {
 			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" "
 					+ "pontos de vida.\n");
 		
-		}else if((valorDadosSorteado>1) && (valorDadosSorteado<20)) {
+		}else if((valorDadosSorteado>1) && (valorDadosSorteado<parametroDados)) {
 			
 			danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaPersonagem);
 			

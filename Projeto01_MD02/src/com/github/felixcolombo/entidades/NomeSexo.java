@@ -32,7 +32,7 @@ public class NomeSexo {
 		do {
 			erro=false;
 			
-			String menu = "\n";
+			String menu = "";
 			menu += "    1 - Feminino \n";
 			menu += "    2 - Masculino ";
 						

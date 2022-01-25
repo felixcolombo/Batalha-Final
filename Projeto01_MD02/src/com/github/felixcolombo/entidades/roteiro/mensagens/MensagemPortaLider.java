@@ -4,7 +4,7 @@ public class MensagemPortaLider {
 	
 	public static void exibirMensagemPortaLider() {
 		
-		System.out.println("Ao lado da porta, você vê uma chave dourada em cima de uma mesa, e sabe que aquela chave\r\n"
+		System.out.println("\nAo lado da porta, você vê uma chave dourada em cima de uma mesa, e sabe que aquela chave\r\n"
 				+ "abre a outra fechadura da porta do líder inimigo. Você pega a chave e guarda na pequena bolsa\r\n"
 				+ "que leva presa ao cinto.\n");
 		

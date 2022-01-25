@@ -80,9 +80,9 @@ public class RoteiroJogo {
 
 				pause(500);
 				
-				MensagemAposDerrotarArmeiro.exibirMensagemAposDerrotarArmeiro();
-				
 				ExibirDadosPersonagens.exibirDadosPersonagens();
+				
+				MensagemAposDerrotarArmeiro.exibirMensagemAposDerrotarArmeiro();
 				
 				EscolhaPegarArmadurasArmeiro.escolhaPegarArmadurasArmeiro();
 				pause(500);

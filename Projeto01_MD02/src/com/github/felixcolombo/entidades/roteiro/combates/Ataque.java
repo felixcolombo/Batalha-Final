@@ -7,14 +7,6 @@ public class Ataque {
 		
 		double forcaAtaque = ((valorDadosSorteado + ataque + poderArma*fatorArma)*fatorNivel);
 		
-		System.out.println(valorDadosSorteado);
-		System.out.println(ataque);
-		System.out.println(poderArma);
-		System.out.println(fatorArma);
-		System.out.println(fatorNivel);
-		
-		System.out.println(forcaAtaque);
-		
 		return forcaAtaque;
 		
 	}

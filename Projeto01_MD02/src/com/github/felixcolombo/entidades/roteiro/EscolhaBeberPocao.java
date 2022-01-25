@@ -15,6 +15,8 @@ public class EscolhaBeberPocao {
 		
 		boolean erro;
 		
+		System.out.println("\nO que você deseja fazer?");
+		
 		do {
 			erro=false;
 				

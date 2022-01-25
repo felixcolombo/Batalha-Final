@@ -127,7 +127,7 @@ public class Combates {
 		if(valorDadosSorteado==1) {
 			System.out.println("Você errou seu ataque! O "+nomeInimigo+" não sofreu dano algum.\n");
 						
-		}else if((valorDadosSorteado>1) && (valorDadosSorteado<parametroDados)) {
+		}else if((valorDadosSorteado>1) && (valorDadosSorteado<=parametroDados)) {
 			
 			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
 			
@@ -193,6 +193,7 @@ public class Combates {
 				
 				System.out.println("Você deseja continuar(1) ou fujir(2)?");
 				continuar = keyboard.next();
+				
 				if(!continuar.equals("1")&&!continuar.equals("2")) {
 					System.out.println("Oops!! Escolha inválida!");
 					System.out.println("Escolha entre as opções continuar(1) ou fujir(2):");

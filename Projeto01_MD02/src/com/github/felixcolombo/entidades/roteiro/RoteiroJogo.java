@@ -131,7 +131,7 @@ public class RoteiroJogo {
 						MensagemFinal.exibirMensagemFinal();
 						pause(500);
 						
-						System.out.println("\nFim de Jogo!!");
+						System.out.println("\nFim de Jogo!!\n");
 						ExibirDadosPersonagens.exibirDadosPersonagens();
 					}
 				}

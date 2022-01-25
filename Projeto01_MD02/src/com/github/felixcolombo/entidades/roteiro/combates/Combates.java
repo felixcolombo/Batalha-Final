@@ -100,16 +100,18 @@ public class Combates {
 						
 			RolamentoDados.rolarDados(parametroDados);
 			valorDadosSorteado = RolamentoDados.getValorDadosSorteado();
-						
+			
+			System.out.println(valorDadosSorteado);
+			
 			if(ordemAtaque.equals("1")) {
 				pause(600);
-				forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
+				
 				personagemAtaca();
 				pause(600);
 			
 			} else if(ordemAtaque.equals("2")) {
 				pause(600);
-				forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
+				
 				inimigoAtaca();
 				pause(600);
 
@@ -125,24 +127,23 @@ public class Combates {
 		if(valorDadosSorteado==1) {
 			System.out.println("Você errou seu ataque! O "+nomeInimigo+" não sofreu dano algum.\n");
 						
-		}else if(valorDadosSorteado==parametroDados) {
-			
-			danoAtaque = forcaAtaque;
-			
-			poderInimigo = poderInimigo-danoAtaque;
-			
-			System.out.println("Você acertou um ataque crítico!");
-			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!"
-					+ " Agora ele possui "+poderInimigo+" pontos de vida!\n");
-		
 		}else if((valorDadosSorteado>1) && (valorDadosSorteado<parametroDados)) {
 			
-			danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaInimigo);
+			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataquePersonagem, poderArmaPersonagem, fatorArmaPersonagem, fatorNivelPersonagem);
+			
+			if(valorDadosSorteado==parametroDados) {
+				danoAtaque = forcaAtaque;
+				System.out.println("Você acertou um ataque crítico!");
+				
+			}else {
+				danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaInimigo);
+			}
 			
 			poderInimigo = poderInimigo-danoAtaque;
 			
 			System.out.println("Você atacou "+complementoArma+" e causou "+danoAtaque+" de dano no "+nomeInimigo+"!"
-					+ " Agora ele possui "+poderInimigo+" pontos de vida!\n");
+				+ " Agora ele possui "+poderInimigo+" pontos de vida!\n");
+		
 		}
 		
 		if(poderInimigo>0) {
@@ -152,7 +153,6 @@ public class Combates {
 			System.out.println("O "+nomeInimigo+" não é páreo para o seu heroísmo, e jaz imóvel aos seus pés.");
 			
 			RoteiroJogo.poderPersonagem = poderPersonagem;
-			
 			vencedorCombate = true;
 			fimCombate = true;
 		}
@@ -163,24 +163,22 @@ public class Combates {
 		if(valorDadosSorteado==1) {
 			System.out.println("O "+nomeInimigo+" errou o ataque! Você não sofreu dano.\n");
 		
-		}else if(valorDadosSorteado==parametroDados) {
-
-			danoAtaque = forcaAtaque;
-
-			poderPersonagem = poderPersonagem-danoAtaque;
+		}else if((valorDadosSorteado>1)&&(valorDadosSorteado<=parametroDados)) {
 			
-			System.out.println("O "+nomeInimigo+" acertou um ataque crítico!");
-			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" "
-					+ "pontos de vida.\n");
-		
-		}else if((valorDadosSorteado>1) && (valorDadosSorteado<parametroDados)) {
+			forcaAtaque = Ataque.calcularAtaque(valorDadosSorteado, ataqueInimigo, poderArmaInimigo, fatorArmaInimigo, fatorNivelInimigo);
 			
-			danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaPersonagem);
+			if(valorDadosSorteado==parametroDados) {
+				danoAtaque = forcaAtaque;
+				System.out.println("O "+nomeInimigo+" acertou um ataque crítico!");
+			
+			}else {
+				danoAtaque = DanoAtaque.danoAtaque(forcaAtaque, defesaPersonagem);
+			}
 			
 			poderPersonagem = poderPersonagem-danoAtaque;
-			
+				
 			System.out.println("O "+nomeInimigo+" atacou! Você sofreu "+danoAtaque+" de dano e agora possui "+poderPersonagem+" "
-					+ "pontos de vida.\n");
+				+ "pontos de vida.\n");
 		
 		}
 		

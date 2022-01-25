@@ -7,7 +7,7 @@ public class Lider extends Inimigos{
 	
 	private final String NOME_INIMIGO = "Líder";
 	private final double PODER_INIMIGO = 900;
-	private final double ATAQUE_INIMIGO = 90;
+	private final double ATAQUE_INIMIGO = 80;
 	private final double DEFESA_INIMIGO = 30;
 	private final double PODER_ARMA_INIMIGO = Machado.getPODER_ARMA();
 	

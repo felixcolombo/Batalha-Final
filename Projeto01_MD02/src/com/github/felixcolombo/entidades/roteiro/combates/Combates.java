@@ -101,8 +101,6 @@ public class Combates {
 			RolamentoDados.rolarDados(parametroDados);
 			valorDadosSorteado = RolamentoDados.getValorDadosSorteado();
 			
-			System.out.println(valorDadosSorteado);
-			
 			if(ordemAtaque.equals("1")) {
 				pause(600);
 				
@@ -205,7 +203,7 @@ public class Combates {
 			if(continuar.equals("1")) {
 				ordemAtaque="1";
 			}else {
-				System.out.println("Você não estava preparado para a força do +"+nomeInimigo+", "
+				System.out.println("Você não estava preparado para a força do "+nomeInimigo+", "
 						+ "e decide fugir para que possa tentar novamente em uma próxima vez.");
 				
 				vencedorCombate = false;
